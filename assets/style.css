@@ -1,0 +1,11 @@
+.container {
+	border: solid 1px black;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	margin: 0 auto;
+}
