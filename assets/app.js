@@ -1,4 +1,4 @@
-		var gifSearch = ["scooby doo", "shaggy rogers", "velma", "daphne"];
+var gifSearch = ["scooby doo", "shaggy rogers", "velma", "daphne"];
 
 $(document).ready(function() {
 
@@ -6,16 +6,19 @@ $(document).ready(function() {
 
     	renderButtons();
 
+
+
+
     // function to query the gifs on button click
 
-	$("button").on("click", function displayGiphy() {
+	$("button").on("click", function() {
 
 // assigns attribute to button for gif query
 
 
 		var gifButton = $(this).attr("data-person");
 
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         gifButton + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g";
 
     $.ajax({
@@ -100,8 +103,8 @@ $(document).ready(function() {
     	renderButtons();
     });
 
-    $(document).on("click", ".giphyButton", displayGiphy);
+    // $(document).on("click", ".giphyButton", displayGiphy);
 
-    renderButtons();
+    // renderButtons();
 
 });    
