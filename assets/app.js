@@ -1,25 +1,35 @@
-var gifSearch = ["scooby doo", "shaggy rogers", "velma", "daphne"];
+var gifSearch = [];
 
 $(document).ready(function() {
 
 
 
     	renderButtons();
+	
 
 
 
 
     // function to query the gifs on button click
+	
+function bindClick(){
 
 	$("button").on("click", function() {
 
 // assigns attribute to button for gif query
-
-
+        
 		var gifButton = $(this).attr("data-person");
-
+		
+		if(gifButton !== undefined){
+		 var q = gifButton;
+		}
+		else{
+		 q = $("#searchInput").val();
+		}		
+		
 		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        gifButton + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g";
+        q + "&api_key=dc6zaTOxFJmzC&limit=10&rating=g";
+		
 
     $.ajax({
     	url: queryURL,
@@ -29,7 +39,7 @@ $(document).ready(function() {
     	var results = response.data;
 
     	for (var i = 0; i < results.length; i++) {
-    		var gifDiv = $("<div class='item col-md-4'>");
+    		var gifDiv = $("<div class='item col-md-4 squares'>");
 
     		var rating = results[i].rating;
 
@@ -40,8 +50,8 @@ $(document).ready(function() {
     		gifImage.attr("data-still", results[i].images.fixed_width_still.url);
     		gifImage.attr("data-animate", results[i].images.fixed_width.url);
     		gifImage.attr("data-state", "still");
-    		gifImage.attr("height", "200");
-    		gifImage.attr("width", "300")
+    		gifImage.attr("height", "300");
+    		gifImage.attr("width", "400")
     		gifImage.addClass("gif");
 
     		gifDiv.prepend(p);
@@ -75,7 +85,10 @@ $(document).ready(function() {
     });
 
    });
+}
 
+	bindClick();
+	
 // function to add buttons when user searches
 
     function renderButtons() {
@@ -90,6 +103,7 @@ $(document).ready(function() {
 
 			$("#buttons").append(a);
 		}	
+		bindClick();
 
     }
 
