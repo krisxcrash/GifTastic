@@ -1,4 +1,4 @@
-var gifSearch = [];
+var topics = [];
 
 $(document).ready(function() {
 
@@ -39,7 +39,7 @@ function bindClick(){
     	var results = response.data;
 
     	for (var i = 0; i < results.length; i++) {
-    		var gifDiv = $("<div class='item col-md-4 squares'>");
+    		var gifDiv = $("<div class='item col-md-4 col-sm-6 squares'>");
 
     		var rating = results[i].rating;
 
@@ -63,19 +63,18 @@ function bindClick(){
     //if statement to pause and play gifs
 
       $(".gif").on("click", function() {
-      	console.log("click")
 
 		var state = $(this).attr("data-state");
         var animate = $(this).attr("data-animate");
         var still = $(this).attr("data-still");
 
       if (state === "still") {
-      	console.log("still")
+
         $(this).attr("src", animate);
         $(this).attr("data-state", "animate");
       }
       else {
-      	console.log("animate")
+
         $(this).attr("src", still);
         $(this).attr("data-state", "still");
       };
@@ -94,12 +93,12 @@ function bindClick(){
     function renderButtons() {
     	$("#buttons").empty();
 
-		for (var i = 0; i < gifSearch.length; i++) {
+		for (var i = 0; i < topics.length; i++) {
 
 			var a = $("<button>");
 			a.addClass("btn btn-default btn-lg btnDesign giphyButton");
-			a.attr("data-person", gifSearch[i]);
-			a.text(gifSearch[i]);
+			a.attr("data-person", topics[i]);
+			a.text(topics[i]);
 
 			$("#buttons").append(a);
 		}	
@@ -112,7 +111,7 @@ function bindClick(){
 
     	var gifButton = $("#searchInput").val().trim();
 
-    	gifSearch.push(gifButton);
+    	topics.push(gifButton);
 
     	renderButtons();
     });

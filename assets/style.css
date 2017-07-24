@@ -3,12 +3,11 @@
 	vertical-align: center;
 }
 
-
 h1 {
 	text-align: center;
-	font-size: 3.75em; 
 	margin-bottom: 21px;
 }
+
 
 button {
 	margin: 0 auto;
@@ -48,3 +47,65 @@ p {
 img {
 	align-content: center;
 }
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 980px) {
+	#gifsHere {
+		max-width: 900px;
+	}
+	.gif {
+		width: 375px;
+		height: 280px;
+	}
+	p {
+		width: 375px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#gifsHere {
+		margin-left: 20px;
+		max-width: 700px;
+	}
+	.gif {
+		width: 350px;
+		height: 260px;
+	}
+	p {
+		width: 350px;
+	}
+	.squares {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#gifsHere {
+		margin-left: 50px;
+		max-width: 600px;
+	}
+	.gif {
+		width: 500px;
+		height: 400px;
+	}
+	p {
+		width: 500px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#gifsHere {
+		margin-left: 25px;
+		max-width: 450px;
+	}
+	.gif {
+		width: 400px;
+		height: 300px;
+	}
+	p {
+		width: 400px;
+	}
+}
+
