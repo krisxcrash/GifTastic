@@ -30,6 +30,7 @@ button {
 #gifsHere {
 	margin: 25px 75px;
 	max-width: 1200px;
+	padding-bottom: 150px;
 }
 
 .btnDesign {
@@ -54,6 +55,19 @@ img {
 	align-content: center;
 }
 
+#footer {
+	font-size: 10px;
+	text-align: center;
+	color: #dddddd;
+	background: #666666;
+	border-top: 5px solid #4aaaa5;
+	position: fixed;
+	width: 110%;
+	bottom: 0;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	padding: 25px 0;
+}
 
 /* MEDIA QUERIES */
 
