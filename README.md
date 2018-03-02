@@ -1,3 +1,3 @@
 # GifTastic
 
-An application for searching gifs!
+A search engine using the giphy API! 
